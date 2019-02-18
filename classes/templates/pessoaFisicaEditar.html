@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cadastro de pessoa fisica</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style type="text/css">
+form {
+	width: 666px;
+}
+
+table {
+	width: 666px;
+}
+
+.td {
+	width: 656px;
+}
+
+input[id="nome"] {
+	width: 648px;
+}
+
+input[id="dataNascimento"] {
+	width: 154px;
+}
+
+select[id="selectSexo"] {
+	width: 154px;
+}
+
+select[id="selectEstadoCivil"] {
+	width: 154px;
+}
+
+input[id="cpfCnpj"] {
+	width: 158px;
+}
+
+input[id="profissaoSeguimento"] {
+	width: 648px;
+}
+
+input[id="endereco"] {
+	width: 484px;
+}
+
+input[id="numero"] {
+	width: 152px;
+}
+
+input[id="bairro"] {
+	width: 648px;
+}
+
+input[id="cidade"] {
+	width: 648px;
+}
+
+select[id="selectUf"] {
+	width: 58px;
+}
+
+input[id="cep"] {
+	width: 110px;
+}
+
+input[id="complemento"] {
+	width: 460px;
+}
+
+input[id="telefone"] {
+	width: 317px;
+}
+
+input[id="celular"] {
+	width: 319px;
+}
+
+input[id="email"] {
+	width: 570px;
+}
+
+select[id="selectcliente"] {
+	width: 70px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+
+			<form action="#"
+				th:action="@{/pessoaFisicaEditarSalvar/{id}(id=${pessoaFisicaL.id})}"
+				th:object="${pessoaFisicaL}">
+				<table>
+					<tr>
+						<td class="td"><a>Cadastro de pessoa fisica</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Nome:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" th:value="*{pessoa.nome}" id="nome"
+							name="nome"></td>
+					</tr>
+
+
+				</table>
+				<table>
+					<tr>
+						<td><a>Nascimento:</a></td>
+						<td><a>Sexo:</a></td>
+						<td><a>Estado civil:</a></td>
+						<td><a>CPF:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" th:value="*{dataNascimento}"
+							id="dataNascimento" name="dataNascimento"></td>
+						<td><select id="selectSexo" name="selectSexo">
+								<option th:value="Feminino" th:text="Feminino"></option>
+								<option th:value="Marculino" th:text="Masculino"></option>
+						</select></td>
+						<td><select id="selectEstadoCivil" name="selectEstadoCivil">
+								<option th:text="*{estadoCivil}"></option>
+								<option th:value="Solteiro">Solteiro</option>
+								<option th:value="Casado">Casado</option>
+								<option th:value="Divorciado">Divorciado</option>
+								<option th:value="Vilvo">Vilvo</option>
+						</select></td>
+						<td><input type="text" th:value="*{pessoa.cpfCnpj}"
+							id="cpfCnpj" name="cpfCnpj"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Profissão:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text"
+							th:value="*{pessoa.profissaoSeguimento}" id="profissaoSeguimento"
+							name="profissaoSeguimento"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Endereço:</a></td>
+						<td><a>Número:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" th:value="*{pessoa.endereco}"
+							id="endereco" name="endereco"></td>
+						<td><input type="text" th:value="*{pessoa.numero}"
+							id="numero" name="numero"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Bairro:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" th:value="*{pessoa.bairro}"
+							id="bairro" name="bairro"></td>
+					</tr>
+					<tr>
+						<td><a>Cidade:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" th:value="*{pessoa.cidade}"
+							id="cidade" name="cidade"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>UF:</a></td>
+						<td><a>CEP:</a></td>
+						<td><a>Complemento:</a></td>
+					</tr>
+					<tr>
+						<td><select id="selectUf" name="selectUf">
+								<option th:value="AC" th:text="AC" />
+								<option th:value="AL" th:text="AL" />
+								<option th:value="AP" th:text="AP" />
+								<option th:value="AM" th:text="AM" />
+								<option th:value="BA" th:text="BA" />
+								<option th:value="CE" th:text="CE" />
+								<option th:value="DF" th:text="DF" />
+								<option th:value="GO" th:text="GO" />
+								<option th:value="ES" th:text="ES" />
+								<option th:value="MA" th:text="MA" />
+								<option th:value="MT" th:text="MT" />
+								<option th:value="MS" th:text="MS" />
+								<option th:value="MG" th:text="MG" />
+								<option th:value="PA" th:text="PA" />
+								<option th:value="PB" th:text="PB" />
+								<option th:value="PR" th:text="PR" />
+								<option th:value="PE" th:text="PE" />
+								<option th:value="PI" th:text="PI" />
+								<option th:value="RJ" th:text="RJ" />
+								<option th:value="RN" th:text="RN" />
+								<option th:value="RS" th:text="RS" />
+								<option th:value="RO" th:text="RO" />
+								<option th:value="RR" th:text="RR" />
+								<option th:value="SP" th:text="SP" />
+								<option th:value="SC" th:text="SC" />
+								<option th:value="SE" th:text="SE" />
+								<option th:value="TO" th:text="TO" />
+						</select></td>
+						<td><input type="text" th:value="*{pessoa.cep}" id="cep"
+							name="cep"></td>
+						<td><input type="text" th:value="*{pessoa.complemento}"
+							id="complemento" name="complemento"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Telefone:</a></td>
+						<td><a>Celular:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" th:value="*{pessoa.telefone}"
+							id="telefone" name="telefone"></td>
+						<td><input type="text" th:value="*{pessoa.celular}"
+							id="celular" name="celular"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Emeail:</a></td>
+						<td><a>Cliente:</a></td>
+					</tr>
+					<tr>
+						<td><input type="email" th:value="*{pessoa.email}" id="email"
+							name="email"></td>
+						<td><select id="selectCliente" name="selectCliente">
+								<option th:value="Sim" th:text="Sim" />
+								<option th:value="Nao" th:text="Não" />
+						</select></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td>
+							<button type="submit">Salvar</button> <input type="button"
+							name="btnVoltar" value="Voltar"
+							onclick="window.location.href='/pessoaFisicaLista';">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

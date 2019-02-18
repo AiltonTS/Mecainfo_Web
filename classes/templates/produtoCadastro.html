@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cadastro de produto</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style type="text/css">
+form {
+	width: 666px;
+}
+
+table {
+	width: 666px;
+}
+
+.td {
+	width: 656px;
+}
+
+input[id="codigo"] {
+	width: 200px;
+}
+
+select[id="marcaId"] {
+	width: 440px;
+}
+
+input[id="descricao"] {
+	width: 648px;
+}
+
+input[id="unidadeDeMedida"] {
+	width: 60px;
+}
+
+input[id="valorDeVenda"] {
+	width: 576px;
+}
+</style>
+</head>
+<body>
+	<nav>
+		<a class="a">MecaInfo</a>
+	</nav>
+	<div class="div">
+		<form action="produtoSalvar" method="post">
+			<table>
+				<tr>
+					<td class="td"><a>Cadastro de produto</a>
+			</table>
+			<table>
+				<tr>
+					<td><a>Código:</a></td>
+
+					<td><a>Marca do produto:</a><input type="button"
+						name="btnNovo" value="Novo"
+						onclick="window.location.href='produtoMarcaCadastro';"></td>
+				</tr>
+
+				<tr>
+					<td><input type="text" id="codigo" name="codigo" /></td>
+					<td><select id="marcaId" name="marcaId">
+							<option></option>
+							<option th:each="marcal : ${produtoMarcaL}"
+								th:text="${marcal.marca}" th:value="${marcal.id}"></option>
+					</select></td>
+				</tr>
+
+			</table>
+			<table>
+				<tr>
+					<td><a> Descrição: </a></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="descricao" name="descricao"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a> UND: </a></td>
+					<td><a> Valor de venda: </a></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="unidadeDeMedida"
+						name="unidadeDeMedida"></td>
+					<td><input type="text" id="valorDeVenda" name="valorDeVenda"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><input type="submit" name="btnSalvar" value="Salvar">
+						<input type="button" name="btnVoltar" value="Voltar"
+						onclick="window.location.href='produtoLista';">
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

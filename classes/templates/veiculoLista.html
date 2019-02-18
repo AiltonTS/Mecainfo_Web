@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Usuários cadastrados</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+table {
+	width: 1550px;
+}
+
+tr:nth-child(even) {
+	background-color: #FFFFFF;
+}
+
+select[id="selectMarcaVeiculo"] {
+	width: 612px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form>
+				<table>
+					<tr>
+						<td class="td"><a>Veiculos cadastrados</a>
+				</table>
+				<table>
+					<thead>
+						<tr>
+							<th></th>
+							<th></th>
+							<th><a>Proprietário</a></th>
+							<th><a>Marca</a></th>
+							<th><a>Descrição</a></th>
+							<th><a>Motor</a></th>
+							<th><a>Combustivel</a></th>
+							<th><a>Ano</a></th>
+							<th><a>Modelo</a></th>
+							<th><a>Cor</a></th>
+							<th><a>Placa</a></th>
+							<th><a>Cidade</a></th>
+							<th><a>UF</a></th>
+							<th><a>Renavam</a></th>
+							<th><a>Chassi</a></th>
+						</tr>
+					</thead>
+					<tr th:each="veiculo : ${veiculoL}">
+						<td><a th:href="@{/veiculoEditar/{id}(id=${veiculo.id})}">Editar</a></td>
+						<td><a th:href="@{/veiculoDelete/{id}(id=${veiculo.id})}"
+							onclick="return confirm('Deseja excluir')">Excluir</a></td>
+						<td><span th:text="${veiculo.pessoa.nome}"></span></td>
+						<td><span th:text="${veiculo.veiculoMarca.marca}"></span></td>
+						<td><span th:text="${veiculo.veiculoDescricao.descricao}"></span>
+						</td>
+						<td><span th:text="${veiculo.motor.motor}"></span></td>
+						<td><span th:text="${veiculo.combustivel}"></span></td>
+						<td><span th:text="${veiculo.anoFabricacao}"></span></td>
+						<td><span th:text="${veiculo.anoModelo}"></span></td>
+						<td><span th:text="${veiculo.cor.cor}"></span></td>
+						<td><span th:text="${veiculo.placa}"></span></td>
+						<td><span th:text="${veiculo.cidade}"></span></td>
+						<td><span th:text="${veiculo.uf}"></span></td>
+						<td><span th:text="${veiculo.renavam}"></span></td>
+						<td><span th:text="${veiculo.chassi}"></span></td>
+
+					</tr>
+
+
+				</table>
+				<hr />
+				<table>
+					<tr>
+						<td><input type="button" name="btnNovo" value="Novo"
+							onclick="window.location.href='pessoaLista';"> <input
+							type="button" name="btnVoltarMenu" value="Menu"
+							onclick="window.location.href='/';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

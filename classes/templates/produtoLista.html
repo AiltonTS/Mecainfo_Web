@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Produtos cadastrados</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style type="text/css">
+.alinharDireita {
+	text-align: right;
+	padding-right: 5px;
+}
+
+tr:nth-child(even) {
+	background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form>
+				<table>
+					<tr>
+						<td class="td"><a>Produtos cadastrados</a>
+				</table>
+				<table>
+					<thead>
+						<tr>
+							<th><a></a></th>
+							<th><a></a></th>
+							<th><a>Código</a></th>
+							<th><a>Marca</a></th>
+							<th><a>Descrição</a></th>
+							<th><a>UND</a></th>
+							<th class=alinharDireita><a>Valor de venda</a></th>
+						</tr>
+					</thead>
+					<tr th:each="produto: ${produtoL}">
+						<td><a th:href="@{/produtoEditar/{id}(id=${produto.id})}">Editar</a></td>
+						<td><a th:href="@{/produtoDeletar/{id}(id=${produto.id})}"
+							onclick="return confirm('Deseja excluir')">Excluir</a></td>
+						<td><span th:text="${produto.codigo}"></span></td>
+						<td><span th:text="${produto.marca.marca}"></span></td>
+						<td><span th:text="${produto.descricao}"></span></td>
+						<td><span th:text="${produto.unidadeDeMedida}"></span></td>
+						<td class=alinharDireita><span
+							th:text="${#numbers.formatDecimal(produto.valorDeVenda, 0, 'DEFAULT', 2, 'DEFAULT')}"></span></td>
+
+					</tr>
+				</table>
+				<hr />
+				<table>
+					<tr>
+						<td><input type="button" name="btnNovo" value="Novo"
+							onclick="window.location.href='produtoCadastro';"> <input
+							type="button" name="btnVoltarMenu" value="Menu"
+							onclick="window.location.href='/';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

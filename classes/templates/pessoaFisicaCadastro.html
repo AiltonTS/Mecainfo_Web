@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cadastro de pessoa fisica</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style>
+form {
+	width: 666px;
+}
+
+table {
+	width: 666px;
+}
+
+.td {
+	width: 656px;
+}
+
+input[name="nome"] {
+	width: 648px;
+}
+
+input[name="datanascimento"] {
+	width: 154px;
+}
+
+select[name="selectsexo"] {
+	width: 154px;
+}
+
+select[name="selectestadocivil"] {
+	width: 154px;
+}
+
+input[name="cpfcnpj"] {
+	width: 158px;
+}
+
+input[name="profissaoseguimento"] {
+	width: 648px;
+}
+
+input[name="endereco"] {
+	width: 484px;
+}
+
+input[name="numero"] {
+	width: 152px;
+}
+
+input[name="bairro"] {
+	width: 648px;
+}
+
+input[name="cidade"] {
+	width: 648px;
+}
+
+select[name="selectuf"] {
+	width: 58px;
+}
+
+input[name="cep"] {
+	width: 110px;
+}
+
+input[name="complemento"] {
+	width: 460px;
+}
+
+input[name="telefone"] {
+	width: 317px;
+}
+
+input[name="celular"] {
+	width: 319px;
+}
+
+input[name="email"] {
+	width: 570px;
+}
+
+select[name="selectcliente"] {
+	width: 70px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form action="pessoaFisicaSalvar" method="post">
+				<table>
+					<tr>
+						<td class="td"><a>Cadastro de pessoa fisica</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Nome:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="nome"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Nascimento:</a></td>
+						<td><a>Sexo:</a></td>
+						<td><a>Estado civil:</a></td>
+						<td><a>CPF:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="datanascimento"></td>
+						<td><select name="selectsexo">
+								<option></option>
+								<option>Marculino</option>
+								<option>Feminino</option>
+						</select></td>
+						<td><select name="selectestadocivil">
+								<option></option>
+								<option>Solteiro(a)</option>
+								<option>Casado(a)</option>
+								<option>Divorciado(a)</option>
+								<option>Vilvo(a)</option>
+						</select></td>
+						<td><input type="text" name="cpfcnpj"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Profissão:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="profissaoseguimento"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Endereço:</a></td>
+						<td><a>Número:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="endereco"></td>
+						<td><input type="text" name="numero"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Bairro:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="bairro"></td>
+					</tr>
+					<tr>
+						<td><a>Cidade:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="cidade"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>UF:</a></td>
+						<td><a>CEP:</a></td>
+						<td><a>Complemento:</a></td>
+					</tr>
+					<tr>
+						<td><select name="selectuf">
+								<option></option>
+								<option>SP</option>
+								<option>AC</option>
+								<option>AL</option>
+								<option>AP</option>
+								<option>AM</option>
+								<option>BA</option>
+								<option>CE</option>
+								<option>DF</option>
+								<option>GO</option>
+								<option>ES</option>
+								<option>MA</option>
+								<option>MT</option>
+								<option>MS</option>
+								<option>MG</option>
+								<option>PA</option>
+								<option>PB</option>
+								<option>PR</option>
+								<option>PE</option>
+								<option>PI</option>
+								<option>RJ</option>
+								<option>RN</option>
+								<option>RS</option>
+								<option>RO</option>
+								<option>RR</option>
+								<option>SP</option>
+								<option>SC</option>
+								<option>SE</option>
+								<option>TO</option>
+						</select></td>
+						<td><input type="text" name="cep"></td>
+						<td><input type="text" name="complemento"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Telefone:</a></td>
+						<td><a>Celular:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="telefone"></td>
+						<td><input type="text" name="celular"></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Emeail:</a></td>
+						<td><a>Cliente:</a></td>
+					</tr>
+					<tr>
+						<td><input type="email" name="email"></td>
+						<td><select name="selectcliente">
+								<option></option>
+								<option>Sim</option>
+								<option>Não</option>
+						</select></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><input type="submit" name="btnSalvar" value="Salvar">
+							<input type="button" name="btnVoltar" value="Voltar"
+							onclick="window.location.href='pessoaFisicaLista';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

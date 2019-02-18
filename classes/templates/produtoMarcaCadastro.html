@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cadastro de usuário</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"></link>
+<style>
+form {
+	width: 417px;
+	font-size: 18px;
+	padding: 0px;
+}
+
+table {
+	width: 417px;
+}
+
+.td {
+	width: 407px;
+}
+
+input[type="marca"] {
+	width: 400px;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form class="form" action="produtoMarcaSalvar" method="post">
+				<table>
+					<tr>
+						<td class="td"><a>Cadastro de marca de produto</a></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td><a>Marca do produto:</a></td>
+					</tr>
+					<tr>
+						<td><input type="text" id="marca" name="marca"></td>
+					</tr>
+					<tr>
+						<td>
+							<button type="submit">Salvar</button> <input type="button"
+							name="btnVoltar" value="Voltar"
+							onclick="window.location.href='produtoCadastro';">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

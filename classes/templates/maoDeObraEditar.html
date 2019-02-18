@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cadastro de mão de obra</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style type="text/css">
+form {
+	width: 417px;
+}
+
+.td {
+	width: 407px;
+}
+
+input[type="text"] {
+	width: 400px;
+}
+
+input[type="password"] {
+	width: 400px;
+}
+</style>
+</head>
+<body>
+	<nav>
+		<a class="a">MecaInfo</a>
+	</nav>
+	<div class="div">
+		<form action="#"
+			th:action="@{/maoDeObraEditarSalvar/{id}(id=${maoDeObraL.id})}"
+			th:object="${maoDeObraL}">
+			<table>
+				<tr>
+					<td class="td"><a>Cadastro de mão de obra</a></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Mão de obra:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:field="*{descricao}" id="descricao"
+						name="descricao"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Salvar"> <input
+						type="button" name="btnVoltar" value="Voltar"
+						onclick="window.location.href='/maoDeObraLista';"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

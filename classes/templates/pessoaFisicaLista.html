@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Pessoa Fisica</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style>
+table {
+	width: 2650px;
+}
+
+tr:nth-child(even) {
+	background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form>
+				<table>
+					<tr>
+						<td class="td"><a>Pessoa fisica cadastrada</a></td>
+					</tr>
+				</table>
+
+
+				<table>
+					<thead>
+						<tr>
+							<th><a></a></th>
+							<th><a></a></th>
+							<th><a>Nome</a></th>
+							<th><a>Nascimento</a></th>
+							<th><a>Sexo</a></th>
+							<th><a>Estado civil</a></th>
+							<th><a>CPF</a></th>
+							<th><a>Profissão</a></th>
+							<th><a>Endereço</a></th>
+							<th><a>Número</a></th>
+							<th><a>Bairro</a></th>
+							<th><a>Cidade</a></th>
+							<th><a>UF</a></th>
+							<th><a>CEP</a></th>
+							<th><a>Complemento</a></th>
+							<th><a>Telefone</a></th>
+							<th><a>Celular</a></th>
+							<th><a>Email</a></th>
+							<th><a>Cliente</a></th>
+						</tr>
+					</thead>
+					<tr th:each="pessoaFisica : ${pessoaFisicaL}">
+						<td><a
+							th:href="@{/pessoaFisicaEditar/{id}(id=${pessoaFisica.id})}">Editar</a></td>
+						<td><a
+							th:href="@{/pessoaFisicaDeletar/{id}(id=${pessoaFisica.id})}"
+							onclick="return confirm('Deseja excluir')">Excluir</a></td>
+						<td class=dtNome><span th:text="${pessoaFisica.pessoa.nome}"></span>
+						</td>
+						<td><span th:text="${pessoaFisica.dataNascimento}"></span></td>
+						<td><span th:text="${pessoaFisica.sexo}"></span></td>
+						<td><span th:text="${pessoaFisica.estadoCivil}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.cpfCnpj}"></span></td>
+						<td><span
+							th:text="${pessoaFisica.pessoa.profissaoSeguimento}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.endereco}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.numero}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.bairro}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.cidade}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.uf}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.cep}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.complemento}"></span>
+						</td>
+						<td><span th:text="${pessoaFisica.pessoa.telefone}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.celular}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.email}"></span></td>
+						<td><span th:text="${pessoaFisica.pessoa.cliente}"></span></td>
+					</tr>
+				</table>
+
+
+				<hr />
+				<table>
+					<tr>
+						<td><input type="button" name="btnNovo" value="Novo"
+							onclick="window.location.href='pessoaFisicaCadastro';"> <input
+							type="button" name="btnVoltarMenu" value="Menu"
+							onclick="window.location.href='/';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

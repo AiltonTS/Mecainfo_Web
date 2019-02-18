@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cadastro de pessoa juridica</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style type="text/css">
+form {
+	width: 666px;
+}
+
+table {
+	width: 666px;
+}
+
+.td {
+	width: 656px;
+}
+
+input[name="nome"] {
+	width: 648px;
+}
+
+input[name="nomeFantasia"] {
+	width: 648px;
+}
+
+input[name="profissaoSeguimento"] {
+	width: 648px;
+}
+
+input[name="cpfCnpj"] {
+	width: 165px;
+}
+
+input[name="endereco"] {
+	width: 471px;
+}
+
+input[name="numero"] {
+	width: 165px;
+}
+
+input[name="bairro"] {
+	width: 471px;
+}
+
+input[name="cidade"] {
+	width: 457px;
+}
+
+select[name="selecUf"] {
+	width: 55px;
+}
+
+input[name="cep"] {
+	width: 116px;
+}
+
+input[name="complemento"] {
+	width: 364px;
+}
+
+input[name="telefone"] {
+	width: 129px;
+}
+
+input[name="celular"] {
+	width: 131px;
+}
+
+input[name="responsavel"] {
+	width: 212px;
+}
+
+input[name="email"] {
+	width: 424px;
+}
+
+input[name="site"] {
+	width: 436px;
+}
+
+select[name="selectCliente"] {
+	width: 97px;
+}
+
+select[name="selectFornecedor"] {
+	width: 99px;
+}
+</style>
+</head>
+<body>
+	<nav>
+		<a class="a">MecaInfo</a>
+	</nav>
+	<div class="div">
+		<form action="#"
+			th:action="@{/pessoaJuridicaEditarSalvar/{id}(id=${pessoaJuridicaL.id})}"
+			th:object="${pessoaJuridicaL}">
+			<table>
+				<tr>
+					<td class="td"><a>Cadastro de pessoa juridica</a></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Razão social:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{pessoa.nome}" id="nome"
+						name="nome"></td>
+				</tr>
+
+				<tr>
+					<td><a>Nome fantasia:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{nomeFantasia}"
+						name="nomeFantasia"></td>
+				</tr>
+				<tr>
+					<td><a>Seguimento:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text"
+						th:value="*{pessoa.profissaoSeguimento}"
+						name="profissaoSeguimento"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>CNPJ:</a></td>
+					<td><a>Endereço:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{pessoa.cpfCnpj}"
+						name="cpfCnpj"></td>
+					<td><input type="text" th:value="*{pessoa.endereco}"
+						name="endereco"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Número:</a></td>
+					<td><a>Bairro:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{pessoa.numero}"
+						name="numero"></td>
+					<td><input type="text" th:value="*{pessoa.bairro}"
+						name="bairro"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Cidade:</a></td>
+					<td><a>UF:</a></td>
+					<td><a>Cep:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{pessoa.cidade}"
+						name="cidade"></td>
+					<td><select name="selectUf">
+							<option></option>
+							<option>SP</option>
+							<option>AC</option>
+							<option>AL</option>
+							<option>AP</option>
+							<option>AM</option>
+							<option>BA</option>
+							<option>CE</option>
+							<option>DF</option>
+							<option>GO</option>
+							<option>ES</option>
+							<option>MA</option>
+							<option>MT</option>
+							<option>MS</option>
+							<option>MG</option>
+							<option>PA</option>
+							<option>PB</option>
+							<option>PR</option>
+							<option>PE</option>
+							<option>PI</option>
+							<option>RJ</option>
+							<option>RN</option>
+							<option>RS</option>
+							<option>RO</option>
+							<option>RR</option>
+							<option>SP</option>
+							<option>SC</option>
+							<option>SE</option>
+							<option>TO</option>
+					</select></td>
+					<td><input type="text" th:value="*{pessoa.cep}" name="cep"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Complemento:</a></td>
+					<td><a>Telefone:</a></td>
+					<td><a>Celular:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{pessoa.complemento}"
+						name="complemento"></td>
+					<td><input type="text" th:value="*{pessoa.telefone}"
+						name="telefone"></td>
+					<td><input type="text" th:value="*{pessoa.celular}"
+						name="celular"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Responsavel:</a></td>
+					<td><a>Emeail:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{responsavel}"
+						name="responsavel"></td>
+					<td><input type="text" th:value="*{pessoa.email}" name="email"></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Site:</a></td>
+					<td><a>Cliente:</a></td>
+					<td><a>Fornecedor:</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" th:value="*{site}" name="site"></td>
+					<td><select name="selectCliente">
+							<option></option>
+							<option>Sim</option>
+							<option>Não</option>
+					</select></td>
+					<td><select name="selectFornecedor">
+							<option></option>
+							<option>Sim</option>
+							<option>Não</option>
+					</select></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><input type="submit" name="btnSalvar" value="Salvar">
+						<input type="button" name="btnVoltar" value="Voltar"
+						onclick="window.location.href='/pessoaJuridicaLista';"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

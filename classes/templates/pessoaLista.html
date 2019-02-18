@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Pessoa Fisica</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style>
+table {
+	width: 2650px;
+}
+
+tr:nth-child(even) {
+	background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form>
+				<table>
+					<tr>
+						<td class="td"><a>Lista de Cliente</a></td>
+					</tr>
+				</table>
+				<table>
+					<thead>
+						<tr>
+							<th><a></a></th>
+							<th><a>Nome</a></th>
+							<th><a>CPF/CNPJ</a></th>
+							<th><a>Profissão/Seguimento</a></th>
+							<th><a>Endereço</a></th>
+							<th><a>Número</a></th>
+							<th><a>Bairro</a></th>
+							<th><a>Cidade</a></th>
+							<th><a>UF</a></th>
+							<th><a>CEP</a></th>
+							<th><a>Complemento</a></th>
+							<th><a>Telefone</a></th>
+							<th><a>Celular</a></th>
+							<th><a>Email</a></th>
+							<th><a>Cliente</a></th>
+						</tr>
+					</thead>
+					<tr th:each="pessoa : ${pessoaL}">
+						<td><a th:href="@{/pessoaSelecionar/{id}(id=${pessoa.id})}">OK</a></td>
+						<td class=dtNome><span th:text="${pessoa.nome}"></span></td>
+						<td><span th:text="${pessoa.cpfCnpj}"></span></td>
+						<td><span th:text="${pessoa.profissaoSeguimento}"></span></td>
+						<td><span th:text="${pessoa.endereco}"></span></td>
+						<td><span th:text="${pessoa.numero}"></span></td>
+						<td><span th:text="${pessoa.bairro}"></span></td>
+						<td><span th:text="${pessoa.cidade}"></span></td>
+						<td><span th:text="${pessoa.uf}"></span></td>
+						<td><span th:text="${pessoa.cep}"></span></td>
+						<td><span th:text="${pessoa.complemento}"></span></td>
+						<td><span th:text="${pessoa.telefone}"></span></td>
+						<td><span th:text="${pessoa.celular}"></span></td>
+						<td><span th:text="${pessoa.email}"></span></td>
+						<td><span th:text="${pessoa.cliente}"></span></td>
+					</tr>
+				</table>
+
+
+				<hr />
+				<table>
+					<tr>
+						<td><input type="button" name="btnNovo" value="Novo"
+							onclick="window.location.href='pessoaFisicaCadastro';"> <input
+							type="button" name="btnVoltarMenu" value="Menu"
+							onclick="window.location.href='/';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

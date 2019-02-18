@@ -1,0 +1,144 @@
+@charset "UTF-8";
+
+input[type="button"] {
+	font-size: 18px;
+}
+
+input[type="text"] {
+	font-size: 18px;
+	align: right;
+}
+
+input[type="password"] {
+	font-size: 18px;
+}
+
+input[type="email"] {
+	font-size: 18px;
+}
+
+select {
+	/* background: url(http://www.webcis.com.br/images/imagens-noticias/select/ico-seta-appearance.gif) no-repeat #eeeeee;  /* Imagem de fundo (Seta) */
+	/* background-position: 218px center;  /*Posição da imagem do background*/
+	-webkit-appearance: none; /* Remove estilo padrão do Chrome */
+	-moz-appearance: none; /* Remove estilo padrão do FireFox */
+	appearance: none; /* Remove estilo padrão do FireFox*/
+	font-size: 18px;
+	height: 27px;
+	/*Altura do select, importante para que tenha a mesma altura em todo os navegadores */
+}
+
+body {
+	margin: 0px;
+	background-color: #FFFFFF;
+}
+
+th {
+	background-color: #4CAF50;
+	text-align: left;
+	color: white;
+}
+
+th a {
+	color: white;
+	padding-left: 5px;
+}
+
+td {
+	padding-left: 5px;
+}
+
+.th, .td {
+	padding-left: 5px;
+	font-size: 18px;
+	text-align: left;
+}
+
+.td {
+	background-color: #6495ED;
+}
+
+div {
+	background: #FFFFFF;
+}
+
+.div {
+	width: 100%;
+	height: 90vh;
+	background: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.a {
+	padding-left: 10px;
+	padding-right: 10px;
+	line-height: 40px;
+}
+
+nav {
+	height: 40px;
+	width: 100vw;
+	background-color: #6495ED;
+}
+
+.nav {
+	width: 1022px
+}
+
+form {
+	width: 1022px;
+	border: 1px solid #000000;
+	background-color: #E8E8E8;
+	position: absolute;
+	overflow: auto;
+}
+
+table {
+	width: 1022px;
+}
+
+ul {
+	top: 0;
+	margin: 0px;
+	padding-left: 0px;
+}
+
+ul ul {
+	display: none;
+}
+
+ul li a {
+	line-height: 40px;
+	padding: 10px;
+}
+
+ul li {
+	background-color: #6495ED;
+	float: left;
+	height: 40px;
+	display: inline-block;
+	position: relative;
+	opacity: .9;
+}
+
+ul li:hover {
+	background-color: #FFFFFF;
+}
+
+ul ul ul {
+	float: left;
+	margin-left: 181px;
+	position: absolute;
+}
+
+ul li:hover>ul {
+	display: block;
+}

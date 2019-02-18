@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Mão de obra cadastrada</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style type="text/css">
+tr:nth-child(even) {
+	background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form>
+				<table>
+					<tr>
+						<td class="td"><a>Mão de obra cadastrada</a></td>
+					</tr>
+				</table>
+				<table>
+					<thead>
+						<tr>
+							<th><a></a></th>
+							<th><a></a></th>
+							<th><a>Descrição</a></th>
+						</tr>
+					</thead>
+					<tr th:each="maoDeObra: ${maoDeObraL}">
+						<td><a th:href="@{/maoDeObraEditar/{id}(id=${maoDeObra.id})}">Editar</a></td>
+						<td><a
+							th:href="@{/maoDeObraDeletar/{id}(id=${maoDeObra.id})}"
+							onclick="return confirm('Deseja excluir')">Excluir</a></td>
+						<td><span th:text="${maoDeObra.descricao}"></span></td>
+					</tr>
+				</table>
+				<hr />
+				<table>
+					<tr>
+						<td><input type="button" name="btnNovo" value="Novo"
+							onclick="window.location.href='maoDeObraCadastro';"> <input
+							type="button" name="btnVoltarMenu" value="Menu"
+							onclick="window.location.href='/';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

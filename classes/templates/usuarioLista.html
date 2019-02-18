@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Usuários cadastrados</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style type="text/css">
+.th {
+	width: 60px;
+}
+
+tr:nth-child(even) {
+	background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form>
+				<table>
+					<tr>
+						<td class="td"><a>Usuários cadastrados</a></td>
+					</tr>
+				</table>
+				<table>
+					<thead>
+						<tr>
+							<th class="th"><a></a></th>
+							<th class="th"><a></a></th>
+							<th><a>Usuário</a></th>
+							<th><a>Nome</a></th>
+						</tr>
+					</thead>
+					<tr th:each="usuario : ${usuarios}">
+						<td><a th:href="@{/usuarioEditar/{id}(id=${usuario.id})}">Editar</a></td>
+						<td><a th:href="@{/usuarioDelete/{id}(id=${usuario.id})}"
+							onclick="return confirm('Deseja excluir')">Excluir</a></td>
+						<td><span th:text="${usuario.usuario}"></span></td>
+						<td><span th:text="${usuario.nome}"></span></td>
+					</tr>
+				</table>
+				<hr />
+				<table>
+					<tr>
+						<td><input type="button" name="btnNovo" value="Novo"
+							onclick="window.location.href='usuarioCadastro';"> <input
+							type="button" name="btnVoltarMenu" value="Menu"
+							onclick="window.location.href='/';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

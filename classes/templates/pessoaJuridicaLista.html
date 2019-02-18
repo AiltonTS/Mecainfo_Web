@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Pessoa Fisica</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<style>
+form {
+	width: 1022px;
+	overflow: auto;
+}
+
+table {
+	width: 2650px;
+}
+
+tr:nth-child(even) {
+	background-color: #FFFFFF;
+}
+</style>
+</head>
+<body>
+	<div>
+		<nav>
+			<a class="a">MecaInfo</a>
+		</nav>
+		<div class="div">
+			<form>
+				<table>
+					<tr>
+						<td class="td"><a>Pessoa juridica cadastrado</a></td>
+					</tr>
+				</table>
+				<table>
+					<thead>
+						<tr>
+							<th><a></a></th>
+							<th><a></a></th>
+							<th><a>Razão social</a></th>
+							<th><a>Nome fantasia</a></th>
+							<th><a>CNPJ</a></th>
+							<th><a>Seguimento</a></th>
+							<th><a>Endereço</a></th>
+							<th><a>Número</a></th>
+							<th><a>Bairro</a></th>
+							<th><a>Cidade</a></th>
+							<th><a>UF</a></th>
+							<th><a>CEP</a></th>
+							<th><a>Complemento</a></th>
+							<th><a>Telefone</a></th>
+							<th><a>Celular</a></th>
+							<th><a>Email</a></th>
+							<th><a>Site</a></th>
+							<th><a>Responsavel</a></th>
+							<th><a>Cliente</a></th>
+							<th><a>Fornecedor</a></th>
+						</tr>
+					</thead>
+					<tr th:each="pessoaJuridica : ${pessoaJuridicaL}">
+						<td><a
+							th:href="@{/pessoaJuridicaEditar/{id}(id=${pessoaJuridica.id})}">Editar</a></td>
+						<td><a
+							th:href="@{/pessoaJuridicaDeletar/{id}(id=${pessoaJuridica.id})}"
+							onclick="return confirm('Deseja excluir')">Excluir</a></td>
+						<td><span th:text="${pessoaJuridica.pessoa.nome}"></span></td>
+						<td><span th:text="${pessoaJuridica.nomeFantasia}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.cpfCnpj}"></span>
+						</td>
+						<td><span
+							th:text="${pessoaJuridica.pessoa.profissaoSeguimento}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.endereco}"></span>
+						</td>
+						<td><span th:text="${pessoaJuridica.pessoa.numero}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.bairro}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.cidade}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.uf}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.cep}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.complemento}"></span>
+						</td>
+						<td><span th:text="${pessoaJuridica.pessoa.telefone}"></span>
+						</td>
+						<td><span th:text="${pessoaJuridica.pessoa.celular}"></span>
+						</td>
+						<td><span th:text="${pessoaJuridica.pessoa.email}"></span></td>
+						<td><span th:text="${pessoaJuridica.site}"></span></td>
+						<td><span th:text="${pessoaJuridica.responsavel}"></span></td>
+						<td><span th:text="${pessoaJuridica.pessoa.cliente}"></span>
+						</td>
+						<td><span th:text="${pessoaJuridica.fornecedor}"></span></td>
+					</tr>
+				</table>
+				<hr />
+				<table>
+					<tr>
+						<td><input type="button" name="btnNovo" value="Novo"
+							onclick="window.location.href='pessoaJuridicaCadastro';">
+							<input type="button" name="btnVoltarMenu" value="Menu"
+							onclick="window.location.href='/';"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

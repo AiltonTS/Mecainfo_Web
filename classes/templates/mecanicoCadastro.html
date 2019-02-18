@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"></meta>
+<title>Cadastro de mecânico</title>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style type="text/css">
+form {
+	width: 417px;
+}
+
+.td {
+	width: 407px;
+}
+
+input[type="text"] {
+	width: 400px;
+}
+
+input[type="password"] {
+	width: 400px;
+}
+</style>
+</head>
+<body>
+	<nav>
+		<a class="a">MecaInfo</a>
+	</nav>
+	<div class="div">
+
+		<form action="mecanicoSalvar" method="post">
+			<table>
+				<tr>
+					<td class="td"><a>Cadastro de mecânico</a></td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td><a>Mecânico</a></td>
+				</tr>
+				<tr>
+					<td><input type="text" name="nome"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="btnSalvar" value="Salvar">
+						<input type="button" name="btnVoltar" value="Voltar"
+						onclick="window.location.href='/mecanicoLista';"></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
